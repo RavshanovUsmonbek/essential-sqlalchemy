@@ -3,31 +3,31 @@ from tables import engine, cookies
 
 # ISERTS
 ## Single insert as a method
-ins = cookies.insert().values(
-    cookie_name="chocolate chip",
-    cookie_recipe_url="https://www.youtube.com/",
-    cookie_sku="CC01",
-    quantity="12",
-    unit_cost="0.5",
-)
+# ins = cookies.insert().values(
+#     cookie_name="chocolate chip",
+#     cookie_recipe_url="https://www.youtube.com/",
+#     cookie_sku="CC01",
+#     quantity="12",
+#     unit_cost="0.5",
+# )
 
-with engine.connect() as connection:
-    result = connection.execute(ins)
+# with engine.connect() as connection:
+#     result = connection.execute(ins)
 
-print(result.inserted_primary_key)
+# print(result.inserted_primary_key)
 
 ## Global insert method
-ins = insert(cookies).values(
-    cookie_name="chocolate chip",
-    cookie_recipe_url="https://www.youtube.com/",
-    cookie_sku="CC01",
-    quantity="12",
-    unit_cost="0.5",
-)
-connection = engine.connect()
-result = connection.execute(ins)
-connection.close()
-print(str(ins))
+# ins = insert(cookies).values(
+#     cookie_name="chocolate chip",
+#     cookie_recipe_url="https://www.youtube.com/",
+#     cookie_sku="CC01",
+#     quantity="12",
+#     unit_cost="0.5",
+# )
+# connection = engine.connect()
+# result = connection.execute(ins)
+# connection.close()
+# print(str(ins))
 
 ## Multiple inserts
 inventories = [

@@ -39,7 +39,7 @@ line_items = Table('line_items', metadata,
     Column('extended_cost', Numeric(12, 2))
 )
 
-engine = create_engine('postgresql+psycopg2://postgres:password@localhost:5433/myDB')
+engine = create_engine('postgresql+psycopg2://postgres:pass@localhost:5432/mydb')
 
 if __name__ == '__main__':
     metadata.create_all(engine)
